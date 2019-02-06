@@ -14,5 +14,7 @@ echo '#!/usr/bin/env bash' | oresed fixedsed_E '#!/usr/bin/env bash' '#!/usr/bin
 
 ## how to run test
 ```
-oresed test
+PATH=".:$PATH"
+
+ORESED_DEBUG=1 oresed test
 ```
