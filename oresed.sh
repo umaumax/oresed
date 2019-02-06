@@ -5,12 +5,12 @@ function cmdcheck() { type >/dev/null 2>&1 "$@"; }
 function fixedsed_src() {
 	# NOTE: treat delim as '/'
 	# TODO: add arg option
-	sed -e 's/[\/&]/\\&/g'
+	sed -E 's/([\/]|\[|\])/\\&/g'
 }
 function fixedsed_src_E() {
 	# NOTE: treat delim as '/'
 	# TODO: add arg option
-	sed -E 's/([$+/|.*\[()?]|]|\^)/\\&/g'
+	sed -E 's/([$+/|.*\()?]|\[|\]|\^)/\\&/g'
 }
 function fixedsed_dst() {
 	# NOTE: treat delim as '/'
